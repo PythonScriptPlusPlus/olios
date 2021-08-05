@@ -1,22 +1,41 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Items from '../views/items.vue';
+import Home from '../views/mainPage.vue';
+import Search from '../views/searchPage.vue';
+import ShopCart from '../views/shoppingCart.vue';
+import DnF from '../views/PageNotFound.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Main Page',
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/shopcart',
+    name: 'Shopping cart',
+    component: ShopCart,
+  },
+  {
+    path: '/items',
+    name: 'Items',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: Items,
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search,
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'PageNotFound',
+    component: DnF,
   },
 ];
 

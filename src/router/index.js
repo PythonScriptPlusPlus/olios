@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Items from '../views/items.vue';
-import Home from '../views/mainPage.vue';
-import Search from '../views/searchPage.vue';
-import ShopCart from '../views/shoppingCart.vue';
-import DnF from '../views/PageNotFound.vue';
+import Items from '../views/Items.vue';
+import MainPage from '../views/MainPage.vue';
+import SearchPage from '../views/SearchPage.vue';
+import ShopCart from '../views/ShoppingCart.vue';
+import Page404 from '../views/Page404.vue';
 
 Vue.use(VueRouter);
 
@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/',
     name: 'Main Page',
-    component: Home,
+    component: MainPage,
   },
   {
     path: '/shopcart',
@@ -22,20 +22,17 @@ const routes = [
   {
     path: '/items',
     name: 'Items',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: Items,
   },
   {
     path: '/search',
     name: 'Search',
-    component: Search,
+    component: SearchPage,
   },
   {
-    path: '/:catchAll(.*)',
+    path: '*',
     name: 'PageNotFound',
-    component: DnF,
+    component: Page404,
   },
 ];
 

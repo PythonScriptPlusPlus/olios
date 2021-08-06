@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Main Page</router-link> |
-      <router-link to="/search">Search</router-link> |
+      <router-link to="/items">Items</router-link> |
       <router-link to="/shopcart">Shopping Cart</router-link> |
-      <router-link to="/items">Items</router-link>
+      <router-link to="/search">Search</router-link>
     </div>
     <router-view/>
   </div>

@@ -1,0 +1,23 @@
+.btn {
+    padding: 10px 30px;
+    background-color: $main-color;
+    color: $white;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 54px;
+    cursor: pointer;
+    border: 2px solid $main-color;
+    display: inline-block;
+    
+    &:hover {
+        transition: background-color .2s;
+        background-color: transparent;
+        color: $main-color;
+    }
+
+    &:active {
+        transition: background-color .2s;
+        background-color: $main-color;
+        color: $white;
+    }
+}

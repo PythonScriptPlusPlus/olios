@@ -22,15 +22,15 @@
     }
 }
 
-.srch {
+.search-input {
     text-align: left;
-    display: inline;
+    display: inline-block;
     padding: 0px;
     font-size: 48px;
     color: $black;
     text-transform: uppercase;
     border: none;
-    border-bottom: 1px solid $under-line;
+    border-bottom: 1px solid $border-color;
     line-height: 72px;
     width: calc(100vw - 100px);
 
@@ -40,18 +40,15 @@
 }
 
 .cross {
-    display: inline;
+    display: inline-block;
 }
 
-.lable {
+.search-label {
     text-align: left;
-    width: 300px;
-    margin: 0px;
-    margin-top: 5px;
+    margin: 5px 0px 0px 0px;
     color: $sub-text;
 }
 
-.strctDiv {
-    margin-left: 50px;
-    width: 0;
+.search-div__alignment {
+    text-align: left;
 }

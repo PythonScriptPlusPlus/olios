@@ -1,12 +1,9 @@
 <template>
-    <div class='strctDiv'>
-        <span>
-            <input class='srch' placeholder='red seat' />
-        </span>
-        <span></span>
-        <div>
+    <div class='search-div__alignment'>
+        <input class='search-input' placeholder='red seat' />
+        <div class='search-label'>
             <!-- eslint-disable max-len -->
-            <p class='lable'> Type product that you are looking for</p>
+            Type product that you are looking for
             <!-- eslint-enable max-len -->
         </div>
     </div>

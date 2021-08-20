@@ -21,37 +21,3 @@
         color: $white;
     }
 }
-
-.srch {
-    text-align: left;
-    display: inline;
-    padding: 0px;
-    font-size: 48px;
-    color: $black;
-    text-transform: uppercase;
-    border: none;
-    border-bottom: 1px solid $under-line;
-    line-height: 72px;
-    width: calc(100vw - 100px);
-
-    &::placeholder {
-        color: $black;
-    }
-}
-
-.cross {
-    display: inline;
-}
-
-.lable {
-    text-align: left;
-    width: 300px;
-    margin: 0px;
-    margin-top: 5px;
-    color: $sub-text;
-}
-
-.strctDiv {
-    margin-left: 50px;
-    width: 0;
-}

@@ -22,7 +22,7 @@
     }
 }
 
-.search-input {
+.input {
     text-align: left;
     display: inline-block;
     padding: 0px;
@@ -39,16 +39,12 @@
     }
 }
 
-.cross {
-    display: inline-block;
-}
-
-.search-label {
+.search__label {
     text-align: left;
     margin: 5px 0px 0px 0px;
     color: $sub-text;
 }
 
-.search-div__alignment {
+.search {
     text-align: left;
 }

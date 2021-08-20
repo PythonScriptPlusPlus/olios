@@ -1,6 +1,6 @@
 <template>
-    <div class='search-div__alignment'>
-        <input class='search-input' placeholder='red seat' />
+    <div class='search'>
+        <input class='input' placeholder='red seat' />
         <div class='search-label'>
             <!-- eslint-disable max-len -->
             Type product that you are looking for

@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div class="menu">
 		left menu
 	</div>
 </template>
@@ -13,10 +13,13 @@ export default class LeftMenu extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-    height: 100vw;
-    width: 100px;
+.menu {
+    height: 100vh;
+    width: 80px;
     background-color: $white;
     box-shadow: 0px 0px 15px $border-color;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 </style>

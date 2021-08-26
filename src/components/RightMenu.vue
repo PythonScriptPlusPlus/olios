@@ -3,15 +3,17 @@
 		<button class="right-menu__button">
 			cross
 		</button>
-		<div class="right-menu__item">
-			living room
-			<div class="right-menu__item__icon">
-				icon
+		<div class="right-menu__wrapper">
+			<div>
+				living room
+				<span class="right-menu__icon">
+					icon
+				</span>
 			</div>
 		</div>
-		<p class="right-menu__link">
+		<a class="right-menu__link">
 			all categories
-		</p>
+		</a>
 	</div>
 </template>
 
@@ -25,49 +27,45 @@ export default class RightMenu extends Vue {}
 
 <style lang="scss" scoped>
 .right-menu {
-    height: 100vw;
-    width: 250px;
+    height: 100vh;
+    width: 200px;
     background-color: $white;
     box-shadow: 0px 0px 15px $border-color;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     &__button {
         position: absolute;
         padding: 0;
-        width: 80px;
+        width: 60px;
         height: 60px;
         border: none;
+        border-radius: 50%;
         top: 10px;
         right: 10px;
     }
 
-    &__item {
-        position: absolute;
-        font-size: 16px;
+    &__wrapper {
+        position: static;
         color: $sub-text;
-        top: 350px;
-        left: 40px;
         text-transform: uppercase;
-
-        &__icon {
-            text-transform: lowercase;
-            background-color: $border-color;
-            position: absolute;
-            top: -5px;
-            right: -40px;
-            width: 35px;
-            height: 35px;
-        }
+        margin-top: 350px
+    }
+    &__icon {
+        text-transform: lowercase;
+        background-color: $border-color;
     }
 
     &__link {
         color: $main-color;
-        margin: 0px;
         text-decoration: underline;
         text-underline-offset: 5px;
-        line-height: 1.5em;
+        font-size: 18px;
         position: absolute;
-        bottom: 0;
-
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 </style>

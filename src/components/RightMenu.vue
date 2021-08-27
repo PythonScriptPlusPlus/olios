@@ -60,7 +60,7 @@ export default class RightMenu extends Vue {}
         color: $main-color;
         text-decoration: underline;
         text-underline-offset: 5px;
-        font-size: 18px;
+        font-size: 16px;
         position: absolute;
         transition: bottom .5s;
         bottom: 20px;

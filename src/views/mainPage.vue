@@ -28,6 +28,7 @@ export default {
 	background-image: url(../../public/img/background.png);
 	background-size: cover;
 	background-position-y: bottom;
+	background-position-x: center;
 
 	&__title {
 		font-size: 108px;

@@ -23,7 +23,6 @@ export default class OlInput extends Vue {}
 <style lang="scss" scoped>
 
 .search__input {
-    text-align: left;
     background-color: transparent;
     display: inline-block;
     padding: 0px;

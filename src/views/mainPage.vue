@@ -37,7 +37,7 @@ export default {
 	}
 
 	&__subtitle {
-		margin: 50px 0px 30px 0px;
+		margin: 50px 0px 20px 0px;
 		font-size: 18px;
     	font-weight: 400;
 	}

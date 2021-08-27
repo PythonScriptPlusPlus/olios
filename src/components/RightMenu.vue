@@ -4,7 +4,7 @@
 			cross
 		</button>
 		<div class="right-menu__wrapper">
-			<div>
+			<div class="right-menu__item">
 				living room
 				<span class="right-menu__icon">
 					icon
@@ -31,9 +31,6 @@ export default class RightMenu extends Vue {}
     width: 200px;
     background-color: $white;
     box-shadow: 0px 0px 15px $border-color;
-    position: absolute;
-    top: 0;
-    right: 0;
 
     &__button {
         position: absolute;
@@ -47,13 +44,15 @@ export default class RightMenu extends Vue {}
     }
 
     &__wrapper {
-        position: static;
         color: $sub-text;
-        text-transform: uppercase;
         margin-top: 350px
     }
+
+    &__item {
+        margin-bottom: 25px;
+    }
+
     &__icon {
-        text-transform: lowercase;
         background-color: $border-color;
     }
 
@@ -63,9 +62,15 @@ export default class RightMenu extends Vue {}
         text-underline-offset: 5px;
         font-size: 18px;
         position: absolute;
+        transition: bottom .5s;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
+
+        &:hover {
+            transition: bottom .5s;
+            bottom: 25px;
+        }
     }
 }
 </style>

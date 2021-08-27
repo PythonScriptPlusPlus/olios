@@ -11,12 +11,12 @@
 .left-menu {
 	position: absolute;
 	left: 0;
-	height: 100vw;
+    top: 0;
 }
 
 .right-menu {
 	position: absolute;
-	right: 0;
-	height: 100vw;
+	top: 0;
+    right: 0;
 }
 </style>

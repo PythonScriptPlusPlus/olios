@@ -1,34 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Main Page</router-link> |
-      <router-link to="/items">Items</router-link> |
-      <router-link to="/shopcart">Shopping Cart</router-link> |
-      <router-link to="/search">Search</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div>
+		<left-menu class="left-menu" />
+		<right-menu class="right-menu" />
+		<router-view />
+	</div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+.left-menu {
+	position: absolute;
+	left: 0;
+    top: 0;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.right-menu {
+	position: absolute;
+	top: 0;
+    right: 0;
 }
 </style>

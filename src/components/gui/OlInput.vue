@@ -1,16 +1,21 @@
 <template>
-    <div class='search'>
-        <input class='search__input' placeholder='red seat' />
-        <div class='search__label'>
-            <!-- eslint-disable max-len -->
-            Type product that you are looking for
-            <!-- eslint-enable max-len -->
-        </div>
-    </div>
+	<div class="search">
+		<input
+			class="search__input"
+			placeholder="red seat"
+		/>
+		<div class="search__label">
+			<!-- eslint-disable max-len -->
+			Type product that you are looking for
+			<!-- eslint-enable max-len -->
+		</div>
+	</div>
 </template>
 
 <script>
-import { Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({})
 
 export default class OlInput extends Vue {}
 </script>
@@ -18,7 +23,7 @@ export default class OlInput extends Vue {}
 <style lang="scss" scoped>
 
 .search__input {
-    text-align: left;
+    background-color: transparent;
     display: inline-block;
     padding: 0px;
     font-size: 48px;
@@ -35,7 +40,6 @@ export default class OlInput extends Vue {}
 }
 
 .search__label {
-    text-align: left;
     margin: 5px 0px 0px 0px;
     color: $sub-text;
 }

@@ -32,14 +32,14 @@ export default {
 
 	&__title {
 		font-size: 108px;
-    	font-weight: 100;
+    	font-weight: 300;
 		margin: 0;
 	}
 
 	&__subtitle {
-		margin: 40px 0px 10px 0px;
+		margin: 50px 0px 30px 0px;
 		font-size: 18px;
-    	font-weight: 100;
+    	font-weight: 400;
 	}
 }
 

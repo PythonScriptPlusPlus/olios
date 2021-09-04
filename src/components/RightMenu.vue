@@ -1,18 +1,18 @@
 <template>
 	<div class="right-menu">
-		<button class="right-menu__button">
-			cross
-		</button>
+		<button class="right-menu__button" />
 		<div class="right-menu__wrapper">
 			<div class="right-menu__item">
 				living room
-				<span class="right-menu__icon">
-					icon
-				</span>
+				<div class="right-menu__icon" />
+			</div>
+			<div class="right-menu__item">
+				office
+				<div class="right-menu__icon" />
 			</div>
 		</div>
 		<a class="right-menu__link">
-			all categories
+			show all categories
 		</a>
 	</div>
 </template>
@@ -28,48 +28,66 @@ export default class RightMenu extends Vue {}
 <style lang="scss" scoped>
 .right-menu {
     height: 100vh;
-    width: 200px;
+    width: 300px;
     background-color: $white;
     box-shadow: 0px 0px 15px $border-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     &__button {
+        cursor: pointer;
+        background-color: $white;
+        background-image: url("../../public/img/icons/lines.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 0px 0px 15px $border-color;
         position: absolute;
         padding: 0;
         width: 60px;
         height: 60px;
         border: none;
         border-radius: 50%;
-        top: 10px;
-        right: 10px;
+        top: 50px;
+        right: 30px;
     }
 
     &__wrapper {
         color: $sub-text;
-        margin-top: 350px
     }
 
     &__item {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-transform: uppercase;
         margin-bottom: 25px;
     }
 
     &__icon {
         background-color: $border-color;
+        margin-left: 25px;
+        height: 50px;
+        width: 60px;
     }
 
     &__link {
+        width: 200px;
+        text-transform: uppercase;
         color: $main-color;
         text-decoration: underline;
         text-underline-offset: 5px;
         font-size: 16px;
         position: absolute;
         transition: bottom .5s;
-        bottom: 20px;
+        bottom: 65px;
         left: 50%;
         transform: translateX(-50%);
 
         &:hover {
             transition: bottom .5s;
-            bottom: 25px;
+            bottom: 70px;
         }
     }
 }

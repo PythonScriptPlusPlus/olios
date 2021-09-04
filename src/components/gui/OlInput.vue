@@ -24,6 +24,7 @@ export default class OlInput extends Vue {}
 
 .search__input {
     background-color: transparent;
+    font-weight: 200;
     display: inline-block;
     padding: 0px;
     font-size: 48px;

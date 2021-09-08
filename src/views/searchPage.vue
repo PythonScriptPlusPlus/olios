@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<p class="search__text">
-			1 item searched
+			2 item searched
 		</p>
 	</div>
 </template>

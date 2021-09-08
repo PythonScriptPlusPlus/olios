@@ -5,9 +5,9 @@
 				olios
 			</h1>
 			<h6 class="header__subtitle">
-				newest furniture shop existing
+				newest furniture shop template
 			</h6>
-			<button class="btn">
+			<button class="btn header__button">
 				view more
 			</button>
 		</div>
@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 .header {
 	margin: 0 auto;
-	padding-top: 75px;
+	padding-top: 215px;
 	height: 100vh;
 	text-transform: uppercase;
 	background-image: url(../../public/img/background.png);
@@ -31,15 +31,27 @@ export default {
 	background-position-x: center;
 
 	&__title {
-		font-size: 108px;
-    	font-weight: 300;
+		font-size: 200px;
+		padding-top: 1px;
+		padding-right: 12px;
+    	font-weight: 200;
 		margin: 0;
 	}
 
 	&__subtitle {
-		margin: 50px 0px 20px 0px;
-		font-size: 18px;
-    	font-weight: 400;
+		margin: 117px 3px 20px 0px;
+		letter-spacing: .5px;
+		font-size: 33px;
+    	font-weight: 200;
+	}
+
+	&__button {
+		height: 48px;
+		width: 194px;
+		margin-top: 20px;
+		margin-right: 6px;
+		font-size: 17px;
+		letter-spacing: .2px;
 	}
 }
 

@@ -21,14 +21,14 @@ export default class LeftMenu extends Vue {}
 <style lang="scss" scoped>
 .menu {
     height: 100vh;
-    width: 80px;
+    width: 130px;
     background-color: $white;
     box-shadow: 0px 0px 15px $border-color;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0 65px;
+    padding: 30px 0 90px;
 
     &__wrapper {
         display: flex;
@@ -40,20 +40,20 @@ export default class LeftMenu extends Vue {}
         margin-bottom: 100px;
         background-image: url("../../public/img/icons/logo.png");
         background-size: cover;
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
     }
 
     &__item {
         cursor: pointer;
         background-size: cover;
-        width: 25px;
-        height: 30px;
+        width: 24px;
+        height: 29px;
 
         &:hover {
-            transition: width 1s height 1s;
+            transition: width .2s, height .2s;
             width: 30px;
-            height: 35px;
+            height: 36px;
         }
 
         &--logout {

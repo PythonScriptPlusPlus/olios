@@ -15,7 +15,7 @@
 					class="search__item-picture"
 				/>
 				<p class="search__item-text">
-					read seat
+					grey seat
 				</p>
 			</div>
 		</div>
@@ -50,6 +50,14 @@ export default {
 		align-items: center;
 		background: $white;
 		margin: 0 25px 25px 0;
+
+		&:nth-child(2) .search__item-picture{
+			background-image: url(../../public/img/grey_seat.png);
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+
+		}
 
 		&-picture {
 			background-image: url(../../public/img/red_seat.png);

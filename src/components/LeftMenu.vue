@@ -21,7 +21,7 @@ export default class LeftMenu extends Vue {}
 <style lang="scss" scoped>
 .menu {
     height: 100vh;
-    width: 130px;
+    width: 80px;
     background-color: $white;
     box-shadow: 0px 0px 15px $border-color;
     display: flex;
@@ -40,8 +40,8 @@ export default class LeftMenu extends Vue {}
         margin-bottom: 100px;
         background-image: url("../../public/img/icons/logo.png");
         background-size: cover;
-        width: 38px;
-        height: 38px;
+        width: 30px;
+        height: 30px;
     }
 
     &__item {

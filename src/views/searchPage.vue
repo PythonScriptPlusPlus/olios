@@ -1,21 +1,19 @@
 <template>
-	<div class="container">
-		<div class="search">
-			<ol-input />
-			<div class="search__items">
-				<div class="search__item">
-					<div
-						class="search__item--picture"
-					/>
-					<p class="search__item--text">
-						read seat
-					</p>
-				</div>
+	<div class="container search">
+		<ol-input />
+		<div class="search__items">
+			<div class="search__item">
+				<div
+					class="search__item-picture"
+				/>
+				<p class="search__item-text">
+					read seat
+				</p>
 			</div>
-			<p class="search__text">
-				1 item searched
-			</p>
 		</div>
+		<p class="search__text">
+			1 item searched
+		</p>
 	</div>
 </template>
 
@@ -27,7 +25,6 @@ export default {
 
 <style lang="scss" scoped>
 .search {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	text-align: left;
@@ -45,14 +42,14 @@ export default {
 		background: $white;
 		margin: 0 25px 25px 0;
 
-		&--picture {
+		&-picture {
 			background-image: url(../../public/img/red_seat.png);
 			background-size: cover;
 			width: 100px;
 			height: 100px;
 		}
 
-		&--text {
+		&-text {
 			font-size: 24px;
 			text-transform: uppercase;
 			margin-left: 25px;

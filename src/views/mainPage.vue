@@ -51,7 +51,6 @@ export default {
 		margin-top: 20px;
 		margin-right: 6px;
 		font-size: 17px;
-		letter-spacing: .2px;
 	}
 }
 

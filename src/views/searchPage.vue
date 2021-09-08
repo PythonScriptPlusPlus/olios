@@ -10,6 +10,14 @@
 					read seat
 				</p>
 			</div>
+			<div class="search__item">
+				<div
+					class="search__item-picture"
+				/>
+				<p class="search__item-text">
+					read seat
+				</p>
+			</div>
 		</div>
 		<p class="search__text">
 			1 item searched
@@ -25,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .search {
+	height: 500px;
 	display: flex;
 	flex-direction: column;
 	text-align: left;

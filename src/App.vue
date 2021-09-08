@@ -2,7 +2,7 @@
 	<div>
 		<left-menu class="left-menu" />
 		<right-menu class="right-menu" />
-		<router-view class="container" />
+		<router-view />
 	</div>
 </template>
 

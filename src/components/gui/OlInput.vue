@@ -46,6 +46,8 @@ export default class OlInput extends Vue {}
 }
 
 .search {
+    display: inline-block;
     text-align: left;
+    height: auto;
 }
 </style>

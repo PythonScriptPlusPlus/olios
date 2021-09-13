@@ -85,12 +85,6 @@ export default class LeftMenu extends Vue {
             width: 24px;
             height: 29px;
 
-            &:hover {
-                transition: width .2s, height .2s;
-                width: 30px;
-                height: 36px;
-            }
-
         }
     }
 }

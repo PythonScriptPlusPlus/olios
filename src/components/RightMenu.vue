@@ -2,10 +2,10 @@
 	<div class="right-menu">
 		<button
 			class="right-menu__button"
-			@click="changeShow(menuShow)"
+			@click="toggleMenu"
 		/>
 		<div
-			v-show="menuShow"
+			v-if="isMenuShown"
 			class="right-menu__wrapper"
 		>
 			<div
@@ -33,7 +33,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class RightMenu extends Vue {
-    menuShow = true;
+    isMenuShown = true;
     routs = [
     	{
     		icon : 'background-image: url(/img/icons/right_menu/livRoom.png)',
@@ -62,8 +62,8 @@ export default class RightMenu extends Vue {
     	},
     ]
 
-    changeShow(menuShow) {
-    	this.menuShow = (menuShow) ? false : true;
+    toggleMenu() {
+    	this.isMenuShown = !this.isMenuShown;
     }
 
     changeRoute(route) {

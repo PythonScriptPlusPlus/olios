@@ -3,7 +3,14 @@
 		<div class="menu__wrapper">
 			<div class="menu__logo" />
 			<div class="menu__items">
-				buttons
+				<div
+					v-for="route in routs"
+					:key="route.name"
+					class="menu__item"
+					@click="changeRoute(route.path)"
+				>
+					{{ route.name }}
+				</div>
 			</div>
 		</div>
 		<div class="menu__item menu__item--logout" />
@@ -15,7 +22,30 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class LeftMenu extends Vue {}
+export default class LeftMenu extends Vue {
+    routs = [
+    	{
+    		icon: '',
+    		path: '/',
+    		name: 'home'
+    	},
+    	{
+    		icon: '',
+    		path: '/shopcart',
+    		name: 'cart'
+    	},
+    	{
+    		icon: '',
+    		path: '/search',
+    		name: 'search'
+    	},
+    ]
+
+    changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -28,7 +58,7 @@ export default class LeftMenu extends Vue {}
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0 90px;
+    padding: 25px 0 65px;
 
     &__wrapper {
         display: flex;

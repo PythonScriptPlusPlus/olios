@@ -32,7 +32,6 @@ export default {
 
 	&__title {
 		font-size: 200px;
-		padding-top: 1px;
 		padding-right: 12px;
     	font-weight: 200;
 		margin: 0;
@@ -46,8 +45,6 @@ export default {
 	}
 
 	&__button {
-		height: 48px;
-		width: 194px;
 		margin-top: 20px;
 		margin-right: 6px;
 		font-size: 17px;

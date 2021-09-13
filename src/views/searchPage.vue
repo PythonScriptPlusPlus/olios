@@ -20,15 +20,19 @@
 			</div>
 		</div>
 		<p class="search__text">
-			2 item searched
+			{{ amount }} item searched
 		</p>
 	</div>
 </template>
 
 <script>
-export default {
-	name: 'Search',
-};
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({})
+
+export default class SearchPage extends Vue {
+	amount = 3;
+}
 </script>
 
 <style lang="scss" scoped>

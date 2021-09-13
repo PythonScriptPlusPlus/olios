@@ -3,7 +3,13 @@
 		<div class="menu__wrapper">
 			<div class="menu__logo" />
 			<div class="menu__items">
-				buttons
+				<div
+					v-for="route in routs"
+					:key="route.name"
+					class="menu__item"
+					:style="route.icon"
+					@click="changeRoute(route.path)"
+				/>
 			</div>
 		</div>
 		<div class="menu__item menu__item--logout" />
@@ -15,7 +21,30 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class LeftMenu extends Vue {}
+export default class LeftMenu extends Vue {
+    routs = [
+    	{
+    		icon: 'background-image: url(/img/icons/left_menu/home.png)',
+    		path: '/',
+    		name: 'home'
+    	},
+    	{
+    		icon: 'background-image: url(/img/icons/left_menu/basket.png)',
+    		path: '/shopcart',
+    		name: 'cart'
+    	},
+    	{
+    		icon: 'background-image: url(/img/icons/left_menu/search.png)',
+    		path: '/search',
+    		name: 'search'
+    	},
+    ]
+
+    changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -40,24 +69,27 @@ export default class LeftMenu extends Vue {}
         margin-bottom: 100px;
         background-image: url("../../public/img/icons/logo.png");
         background-size: cover;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     &__item {
         cursor: pointer;
         background-size: cover;
-        width: 25px;
-        height: 30px;
-
-        &:hover {
-            transition: width 1s height 1s;
-            width: 30px;
-            height: 35px;
-        }
+        width: 32px;
+        height: 32px;
+        margin-bottom: 50px;
 
         &--logout {
             background-image: url("../../public/img/icons/logout.png");
+            width: 24px;
+            height: 29px;
+
+            &:hover {
+                transition: width .2s, height .2s;
+                width: 30px;
+                height: 36px;
+            }
 
         }
     }

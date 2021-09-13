@@ -1,14 +1,24 @@
 <template>
 	<div class="right-menu">
-		<button class="right-menu__button" />
-		<div class="right-menu__wrapper">
-			<div class="right-menu__item">
-				living room
-				<div class="right-menu__icon" />
-			</div>
-			<div class="right-menu__item">
-				office
-				<div class="right-menu__icon" />
+		<button
+			class="right-menu__button"
+			@click="changeShow(menuShow)"
+		/>
+		<div
+			v-show="menuShow"
+			class="right-menu__wrapper"
+		>
+			<div
+				v-for="route in routs"
+				:key="route.name"
+				class="right-menu__item"
+				@click="changeRoute(route.path)"
+			>
+				{{ route.name }}
+				<div
+					class="right-menu__icon"
+					:style="route.icon"
+				/>
 			</div>
 		</div>
 		<a class="right-menu__link">
@@ -22,7 +32,45 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class RightMenu extends Vue {}
+export default class RightMenu extends Vue {
+    menuShow = true;
+    routs = [
+    	{
+    		icon : 'background-image: url(/img/icons/right_menu/livRoom.png)',
+    		path : '',
+    		name : 'living room'
+    	},
+    	{
+    		icon : 'background-image: url(/img/icons/right_menu/office.png)',
+    		path : '',
+    		name : 'office'
+    	},
+    	{
+    		icon : 'background-image: url(/img/icons/right_menu/forKids.png)',
+    		path : '',
+    		name : 'for kids'
+    	},
+    	{
+    		icon : 'background-image: url(/img/icons/right_menu/kitchen.png)',
+    		path : '',
+    		name : 'kitchen'
+    	},
+    	{
+    		icon : 'background-image: url(/img/icons/right_menu/accesories.png)',
+    		path : '',
+    		name : 'accesories'
+    	},
+    ]
+
+    changeShow(menuShow) {
+    	this.menuShow = (menuShow) ? false : true;
+    }
+
+    changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -66,10 +114,10 @@ export default class RightMenu extends Vue {}
     }
 
     &__icon {
-        background-color: $border-color;
         margin-left: 25px;
-        height: 50px;
+        height: 60px;
         width: 60px;
+        background-size: cover;
     }
 
     &__link {

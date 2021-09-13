@@ -33,7 +33,7 @@ export default class OlInput extends Vue {}
     border: none;
     border-bottom: 1px solid $border-color;
     line-height: 72px;
-    width: calc(100vw - 100px);
+    width: 100%;
 
     &::placeholder {
         color: $black;

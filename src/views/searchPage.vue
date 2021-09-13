@@ -31,7 +31,15 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class SearchPage extends Vue {
-	amount = 3;
+	amount = 53;
+
+	beforeDestroy() {
+		console.log('before destroy');
+	}
+
+	destroyed() {
+		console.log('destroy happened');
+	}
 }
 </script>
 

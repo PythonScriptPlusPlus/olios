@@ -1,29 +1,34 @@
 <template>
-	<div class="right-menu">
+	<div>
 		<button
 			class="right-menu__button"
+			:style="icon"
 			@click="toggleMenu"
 		/>
 		<div
 			v-if="isMenuShown"
-			class="right-menu__wrapper"
+			class="right-menu"
 		>
 			<div
-				v-for="route in routs"
-				:key="route.name"
-				class="right-menu__item"
-				@click="changeRoute(route.path)"
+				class="right-menu__wrapper"
 			>
-				{{ route.name }}
 				<div
-					class="right-menu__icon"
-					:style="route.icon"
-				/>
+					v-for="route in routs"
+					:key="route.name"
+					class="right-menu__item"
+					@click="changeRoute(route.path)"
+				>
+					{{ route.name }}
+					<div
+						class="right-menu__icon"
+						:style="route.icon"
+					/>
+				</div>
 			</div>
+			<a class="right-menu__link">
+				show all categories
+			</a>
 		</div>
-		<a class="right-menu__link">
-			show all categories
-		</a>
 	</div>
 </template>
 
@@ -33,7 +38,8 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class RightMenu extends Vue {
-    isMenuShown = true;
+    isMenuShown = false;
+    icon = ''
     routs = [
     	{
     		icon : 'background-image: url(/img/icons/right_menu/livRoom.png)',
@@ -64,6 +70,7 @@ export default class RightMenu extends Vue {
 
     toggleMenu() {
     	this.isMenuShown = !this.isMenuShown;
+    	this.icon = this.isMenuShown ? 'background-image: url(/img/icons/cross.png)' : '';
     }
 
     changeRoute(route) {
@@ -99,6 +106,7 @@ export default class RightMenu extends Vue {
         border-radius: 50%;
         top: 50px;
         right: 30px;
+        z-index: 1;
     }
 
     &__wrapper {

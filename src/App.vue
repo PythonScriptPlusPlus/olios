@@ -1,20 +1,20 @@
 <template>
 	<div>
-		<left-menu class="left-menu" />
-		<right-menu class="right-menu" />
+		<left-menu class="left" />
+		<right-menu class="right" />
 		<router-view />
 	</div>
 </template>
 
 <style lang="scss">
 
-.left-menu {
+.left {
 	position: absolute;
 	left: 0;
     top: 0;
 }
 
-.right-menu {
+.right {
 	position: absolute;
 	top: 0;
     right: 0;

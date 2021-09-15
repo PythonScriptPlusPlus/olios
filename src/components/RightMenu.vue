@@ -2,7 +2,7 @@
 	<div>
 		<button
 			class="right-menu__button"
-			:style="icon"
+			:style="isMenuShown ? 'background-image: url(/img/icons/cross.png)' : ''"
 			@click="toggleMenu"
 		/>
 		<div
@@ -70,7 +70,7 @@ export default class RightMenu extends Vue {
 
     toggleMenu() {
     	this.isMenuShown = !this.isMenuShown;
-    	this.icon = this.isMenuShown ? 'background-image: url(/img/icons/cross.png)' : '';
+    	//this.icon = this.isMenuShown ? 'background-image: url(/img/icons/cross.png)' : '';
     }
 
     changeRoute(route) {

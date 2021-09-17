@@ -2,7 +2,7 @@
 	<div>
 		<button
 			class="right-menu__button"
-			:style="isMenuShown ? 'background-image: url(/img/icons/cross.png)' : ''"
+			:style="isMenuShown ? 'background-image: url(/img/icons/cross.png)' : 'background-image: url(/img/icons/lines.png)'"
 			@click="toggleMenu"
 		/>
 		<div
@@ -39,7 +39,6 @@ import { Component, Vue } from 'vue-property-decorator';
 
 export default class RightMenu extends Vue {
     isMenuShown = false;
-    icon = ''
     routs = [
     	{
     		icon : 'background-image: url(/img/icons/right_menu/livRoom.png)',
@@ -70,7 +69,6 @@ export default class RightMenu extends Vue {
 
     toggleMenu() {
     	this.isMenuShown = !this.isMenuShown;
-    	//this.icon = this.isMenuShown ? 'background-image: url(/img/icons/cross.png)' : '';
     }
 
     changeRoute(route) {
@@ -94,7 +92,6 @@ export default class RightMenu extends Vue {
     &__button {
         cursor: pointer;
         background-color: $white;
-        background-image: url("../../public/img/icons/lines.png");
         background-repeat: no-repeat;
         background-position: center;
         box-shadow: 0px 0px 15px $border-color;

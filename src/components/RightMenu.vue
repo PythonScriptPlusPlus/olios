@@ -1,29 +1,34 @@
 <template>
-	<div class="right-menu">
+	<div>
 		<button
 			class="right-menu__button"
-			@click="changeShow(menuShow)"
+			:style="isMenuShown ? 'background-image: url(/img/icons/cross.png)' : 'background-image: url(/img/icons/lines.png)'"
+			@click="toggleMenu"
 		/>
 		<div
-			v-show="menuShow"
-			class="right-menu__wrapper"
+			v-if="isMenuShown"
+			class="right-menu"
 		>
 			<div
-				v-for="route in routs"
-				:key="route.name"
-				class="right-menu__item"
-				@click="changeRoute(route.path)"
+				class="right-menu__wrapper"
 			>
-				{{ route.name }}
 				<div
-					class="right-menu__icon"
-					:style="route.icon"
-				/>
+					v-for="route in routs"
+					:key="route.name"
+					class="right-menu__item"
+					@click="changeRoute(route.path)"
+				>
+					{{ route.name }}
+					<div
+						class="right-menu__icon"
+						:style="route.icon"
+					/>
+				</div>
 			</div>
+			<a class="right-menu__link">
+				show all categories
+			</a>
 		</div>
-		<a class="right-menu__link">
-			show all categories
-		</a>
 	</div>
 </template>
 
@@ -33,7 +38,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class RightMenu extends Vue {
-    menuShow = true;
+    isMenuShown = false;
     routs = [
     	{
     		icon : 'background-image: url(/img/icons/right_menu/livRoom.png)',
@@ -62,8 +67,8 @@ export default class RightMenu extends Vue {
     	},
     ]
 
-    changeShow(menuShow) {
-    	this.menuShow = (menuShow) ? false : true;
+    toggleMenu() {
+    	this.isMenuShown = !this.isMenuShown;
     }
 
     changeRoute(route) {
@@ -87,7 +92,6 @@ export default class RightMenu extends Vue {
     &__button {
         cursor: pointer;
         background-color: $white;
-        background-image: url("../../public/img/icons/lines.png");
         background-repeat: no-repeat;
         background-position: center;
         box-shadow: 0px 0px 15px $border-color;
@@ -99,6 +103,7 @@ export default class RightMenu extends Vue {
         border-radius: 50%;
         top: 50px;
         right: 30px;
+        z-index: 1;
     }
 
     &__wrapper {

@@ -76,20 +76,23 @@ export default class LeftMenu extends Vue {
     &__item {
         cursor: pointer;
         background-size: cover;
+        background-position: center;
         width: 32px;
         height: 32px;
         margin-bottom: 50px;
+            transition: opacity 0.5s;
+            opacity: 1;
+
+        &:hover {
+            transition: opacity 0.5s;
+            opacity: .5;
+            
+        }
 
         &--logout {
             background-image: url("../../public/img/icons/logout.png");
             width: 24px;
             height: 29px;
-
-            &:hover {
-                transition: width .2s, height .2s;
-                width: 30px;
-                height: 36px;
-            }
 
         }
     }

@@ -6,6 +6,8 @@ import router from './router';
 import store from './store';
 // components
 import OlInput from './components/gui/OlInput.vue';
+import Delivery from './components/gui/Delivery.vue';
+import Promo from './components/gui/Promocode.vue';
 import LeftMenu from './components/LeftMenu.vue';
 import RightMenu from './components/RightMenu.vue';
 
@@ -14,6 +16,8 @@ Vue.config.productionTip = false;
 Vue.component('OlInput', OlInput);
 Vue.component('LeftMenu', LeftMenu);
 Vue.component('RightMenu', RightMenu);
+Vue.component('Delivery', Delivery);
+Vue.component('Promo', Promo);
 
 new Vue({
 	router,

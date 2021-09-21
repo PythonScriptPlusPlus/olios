@@ -9,10 +9,10 @@
 			</div>
 			<div class="wrap">
 				<div class="delivery">
-					order
+					<delivery />
 				</div>
 				<div class="promo">
-					promo
+					<promo />
 				</div>
 			</div>
 		</div>

@@ -6,8 +6,8 @@ import router from './router';
 import store from './store';
 // components
 import OlInput from './components/gui/OlInput.vue';
-import Delivery from './components/gui/Delivery.vue';
-import Promo from './components/gui/Promocode.vue';
+import Delivery from './components/shoppingCart/DeliveryCard.vue';
+import Promo from './components/shoppingCart/PromocodeCard.vue';
 import LeftMenu from './components/LeftMenu.vue';
 import RightMenu from './components/RightMenu.vue';
 

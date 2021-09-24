@@ -1,9 +1,9 @@
 <template>
-	<div class="wrapper">
-		<p class="wrapper__title">
+	<div class="delivery">
+		<p class="delivery__title">
 			delivery
 		</p>
-		<button class="btn wrapper__button">
+		<button class="btn delivery__button">
 			order
 		</button>
 	</div>
@@ -18,7 +18,7 @@ export default class Delivery extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.delivery {
     height: 100%;
     text-align: left;
     position: relative;

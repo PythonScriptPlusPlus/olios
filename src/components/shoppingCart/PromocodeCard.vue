@@ -1,9 +1,9 @@
 <template>
-	<div class="wrapper">
-		<p class="wrapper__title">
+	<div class="promocode">
+		<p class="promocode__title">
 			have promocode?
 		</p>
-		<a class="wrapper__promo-link">
+		<a class="promocode__promo-link">
 			don't have a promocode?
 		</a>
 	</div>
@@ -18,7 +18,7 @@ export default class Promo extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.promocode {
     height: 100%;
     text-align: left;
     position: relative;

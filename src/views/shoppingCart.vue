@@ -1,17 +1,17 @@
 <template>
-	<div class="container page">
-		<h1 class="title">
+	<div class="container cart">
+		<h1 class="cart__title">
 			Shopping Cart
 		</h1>
-		<div class="wrapper">
-			<div class="shop-cart">
+		<div class="cart__wrapper">
+			<div class="cart__wrapper__shop-cart">
 				shpcart
 			</div>
-			<div class="wrap">
-				<div class="delivery">
+			<div class="cart__wrapper side-bar">
+				<div class="side-bar__delivery">
 					<delivery />
 				</div>
-				<div class="promo">
+				<div class="side-bar__promo">
 					<promo />
 				</div>
 			</div>
@@ -26,40 +26,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page {
+.cart {
 	text-align: left;
 	font-size: 20px;
+
+	&__title {
+		font-weight: 200;
+	}
+
+	&__wrapper {
+		display: flex;
+
+		&__shop-cart {
+			width: 72%;
+			height: 600px;
+			box-shadow: 0 0 15px $sub-text;
+			margin-right: 3%;
+		}
+	}
+
 }
 
-.title {
-	font-weight: 200;
-}
-
-.wrapper {
-	display: flex;
-}
-
-.shop-cart {
-	width: 72%;
-	height: 600px;
-	box-shadow: 0 0 15px $sub-text;
-	margin-right: 3%;
-}
-
-.wrap {
+.side-bar {
 	width: 25%;
-	display: flex;
 	flex-direction: column;
-}
 
-.delivery {
+	&__delivery {
 	height: 400px;
 	box-shadow: 0 0 15px $sub-text;
 	margin-bottom: 30px;
-}
+	}
 
-.promo {
+	&__promo {
 	height: 170px;
 	box-shadow: 0 0 15px $sub-text;
+	}
 }
+
 </style>

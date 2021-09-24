@@ -24,8 +24,9 @@ export default class Delivery extends Vue {}
     position: relative;
 
     &__title {
-       margin: 10px;
-       text-transform: uppercase;
+        margin: 0px;
+        padding: 10px;
+        text-transform: uppercase;
     }
 
     &__button {

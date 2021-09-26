@@ -8,6 +8,7 @@ import store from './store';
 import OlInput from './components/gui/OlInput.vue';
 import Delivery from './components/shoppingCart/DeliveryCard.vue';
 import Promo from './components/shoppingCart/PromocodeCard.vue';
+import CartItem from './components/shoppingCart/CartItem.vue';
 import LeftMenu from './components/LeftMenu.vue';
 import RightMenu from './components/RightMenu.vue';
 
@@ -18,6 +19,7 @@ Vue.component('LeftMenu', LeftMenu);
 Vue.component('RightMenu', RightMenu);
 Vue.component('Delivery', Delivery);
 Vue.component('Promo', Promo);
+Vue.component('CartItem', CartItem);
 
 new Vue({
 	router,

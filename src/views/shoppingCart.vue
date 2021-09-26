@@ -5,7 +5,7 @@
 		</h1>
 		<div class="cart__wrapper">
 			<div class="shop-card">
-				shpcart
+				<cart-item />
 			</div>
 			<div class="info">
 				<p>amount of items: {{ amount }}</p>

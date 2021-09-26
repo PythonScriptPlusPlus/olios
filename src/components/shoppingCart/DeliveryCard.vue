@@ -25,14 +25,13 @@ export default class Delivery extends Vue {}
 
     &__title {
         margin: 0px;
-        padding: 10px;
         text-transform: uppercase;
     }
 
     &__button {
         position: absolute;
-        bottom: 10px;
-        left: 15px;
+        bottom: 0px;
+        left: 5px;
     }
 }
 </style>

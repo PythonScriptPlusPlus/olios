@@ -55,12 +55,14 @@ export default {
 .shop-card {
 	width: 72%;
 	height: 600px;
-	box-shadow: 0 0 15px $sub-text;
+	box-shadow: 0 0 15px $border-color;
 	margin-right: 3%;
+	padding: 10px;
 }
 
 .info {
 	width: calc(72% - 40px);
+	border-top: 1px solid $border-color;
 	position: absolute;
 	bottom: 0px;
 	left: 20px;
@@ -84,14 +86,16 @@ export default {
 	flex-direction: column;
 
 	&__delivery {
+	padding: 10px;
 	height: 400px;
-	box-shadow: 0 0 15px $sub-text;
+	box-shadow: 0 0 15px $border-color;
 	margin-bottom: 30px;
 	}
 
 	&__promo {
 	height: 170px;
-	box-shadow: 0 0 15px $sub-text;
+	padding: 10px;
+	box-shadow: 0 0 15px $border-color;
 	}
 }
 

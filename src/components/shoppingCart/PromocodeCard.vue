@@ -26,21 +26,15 @@ export default class Promo extends Vue {}
     position: relative;
 
     &__title {
-       margin: 10px;
-    }
-
-    &__button {
-        position: absolute;
-        bottom: 10px;
-        left: 15px;
+       margin: 0px;
     }
 
     &__promo-link {
         font-size: 14px;
         text-decoration: none;
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        bottom: 0px;
+        left: 0px;
 
         &:hover {
             text-decoration: underline;

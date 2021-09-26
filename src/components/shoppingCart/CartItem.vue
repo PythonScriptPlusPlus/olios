@@ -1,18 +1,18 @@
 <template>
-	<div class="wrapper">
-		<div class="item">
-			<div class="item__icon" />
-			<p class="item__name">
+	<div class="item">
+		<div class="wrapper">
+			<div class="wrapper__icon" />
+			<p class="wrapper__name">
 				red seat
 			</p>
 		</div>
-		<p class="wrapper__counter">
+		<p class="item__counter">
 			1
 		</p>
-		<p class="wrapper__cost">
+		<p class="item__cost">
 			$45
 		</p>
-		<div class="wrapper__cross" />
+		<div class="item__cross" />
 	</div>
 </template>
 
@@ -25,11 +25,10 @@ export default class CartItem extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px;
     border-bottom: 1px solid $border-color;
 
     &__counter {
@@ -51,7 +50,7 @@ export default class CartItem extends Vue {}
     }
 }
 
-.item {
+.wrapper {
     display: flex;
     align-items: center;
 
@@ -69,8 +68,6 @@ export default class CartItem extends Vue {}
         text-transform: uppercase;
         font-weight: 200;
         margin: 0px;
-        text-align: center;
-        width: 120px;
     }
 }
 

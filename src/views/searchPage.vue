@@ -1,6 +1,11 @@
 <template>
 	<div class="container search">
-		<ol-input />
+		<ol-input
+			v-model="term"
+			:label="'Type whatever you want'"
+			:placeholder="'red seat'"
+			clearable
+		/>
 		<div class="search__items">
 			<div class="search__item">
 				<div
@@ -30,7 +35,9 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class SearchPage extends Vue {}
+export default class SearchPage extends Vue {
+	term = ''
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,28 +1,70 @@
 <template>
-	<div class="search">
+	<div class="field">
 		<input
-			class="search__input"
-			placeholder="red seat"
+			v-model="innerValue"
+			class="field__input"
+			:placeholder="placeholder"
+			@input="onInput($event)"
 		/>
-		<div class="search__label">
-			<!-- eslint-disable max-len -->
-			Type product that you are looking for
-			<!-- eslint-enable max-len -->
+		<span
+			v-if="clearable"
+			@click="onClear"
+		>
+			X
+		</span>
+		<div
+			v-if="label"
+			class="field__label"
+		>
+			{{ label }}
 		</div>
 	</div>
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class OlInput extends Vue {}
+export default class OlInput extends Vue {
+    @Prop({type: String, default: ''}) label
+    @Prop({type: String, default: 'type value'}) placeholder
+    @Prop({default: ''}) value
+    @Prop({type: Boolean, default: false}) clearable
+
+    get innerValue() {
+    	return this.value;
+    }
+
+    set innerValue(value) {
+    	this.$emit('input',value);
+    }
+
+    @Emit('input')
+    onInput(event = {}) {
+    	let value = '';
+
+    	if (event?.target.value) {
+    		value = event.target.value;
+    	}
+
+    	if (!value) {
+    		this.onClear();
+    	}
+
+    	return value;
+    }
+
+    @Emit('clear')
+    onClear() {
+    	this.innerValue = '';
+    }
+}
 </script>
 
 <style lang="scss" scoped>
 
-.search__input {
+.field__input {
     background-color: transparent;
     font-weight: 200;
     display: inline-block;
@@ -40,12 +82,12 @@ export default class OlInput extends Vue {}
     }
 }
 
-.search__label {
+.field__label {
     margin: 5px 0px 0px 0px;
     color: $sub-text;
 }
 
-.search {
+.field {
     display: inline-block;
     text-align: left;
     height: auto;

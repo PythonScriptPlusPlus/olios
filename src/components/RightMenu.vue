@@ -16,7 +16,7 @@
 					v-for="route in routs"
 					:key="route.name"
 					class="right-menu__item"
-					@click="changeRoute(route.path)"
+					@click="changeRoute(route)"
 				>
 					{{ route.name }}
 					<div
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Emit, Vue } from 'vue-property-decorator';
 
 @Component({})
 
@@ -42,7 +42,7 @@ export default class RightMenu extends Vue {
     routs = [
     	{
     		icon : 'background-image: url(/img/icons/right_menu/livRoom.png)',
-    		path : '',
+    		path : '/products',
     		name : 'living room'
     	},
     	{
@@ -72,8 +72,8 @@ export default class RightMenu extends Vue {
     }
 
     changeRoute(route) {
-    	this.$router.push(route).catch(error => {});
-
+    	this.$router.push(route.path).catch(error => {});
+    	this.$emit('changeRoute',route.name);
     }
 }
 </script>

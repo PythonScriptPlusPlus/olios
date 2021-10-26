@@ -6,6 +6,7 @@ import SearchPage from '../views/SearchPage.vue';
 import ShopCart from '../views/ShoppingCart.vue';
 import Page404 from '../views/Page404.vue';
 import GUI from '../views/GuiPage.vue';
+import Product from '../views/Products.vue';
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,11 @@ const routes = [
 		name: 'GUI',
 		component: GUI,
 	},
+	{
+		path: '/products',
+		name: 'Products',
+		component: Product,
+	}
 ];
 
 const router = new VueRouter({

@@ -2,6 +2,7 @@
 	<div class="container search">
 		<ol-input
 			v-model="term"
+			class="search__input"
 			:label="'Type whatever you want'"
 			:placeholder="'red seat'"
 			clearable
@@ -47,6 +48,10 @@ export default class SearchPage extends Vue {
 	flex-direction: column;
 	text-align: left;
     justify-content: space-between;
+
+	&__input {
+		font-size: 48px;
+	}
 
 	&__items {
 		margin-top: 30px;

@@ -2,7 +2,10 @@
 	<div>
 		<left-menu class="left" />
 		<right-menu class="right" />
-		<router-view />
+		<router-view
+			:title="title"
+			@changeRoute="onChange($event)"
+		/>
 	</div>
 </template>
 
@@ -18,5 +21,22 @@
 	position: absolute;
 	top: 0;
     right: 0;
+	z-index: 5;
 }
 </style>
+
+<script>
+export default {
+	data() {
+		return {
+			title: 'none'
+		};
+	},
+	methods: {
+		onChange(name) {
+			this.title = name;
+			console.log('somthin');
+		}
+	}
+};
+</script>

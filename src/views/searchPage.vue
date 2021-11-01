@@ -1,6 +1,12 @@
 <template>
 	<div class="container search">
-		<ol-input />
+		<ol-input
+			v-model="term"
+			class="search__input"
+			:label="'Type whatever you want'"
+			:placeholder="'red seat'"
+			clearable
+		/>
 		<div class="search__items">
 			<div class="search__item">
 				<div
@@ -30,7 +36,9 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class SearchPage extends Vue {}
+export default class SearchPage extends Vue {
+	term = ''
+}
 </script>
 
 <style lang="scss" scoped>
@@ -40,6 +48,10 @@ export default class SearchPage extends Vue {}
 	flex-direction: column;
 	text-align: left;
     justify-content: space-between;
+
+	&__input {
+		font-size: 48px;
+	}
 
 	&__items {
 		margin-top: 30px;

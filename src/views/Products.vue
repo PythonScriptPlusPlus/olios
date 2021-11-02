@@ -15,23 +15,26 @@
 			<div 
 				v-for="item in items"
 				:key="item.name"
-				class="wrapper"
+				:class="item.big ? 'wrapper wrapper--big' : 'wrapper'"
 			>
 				<div
-					class="items__img"
+					:class="item.big ? 'items__img items__img--big' : 'items__img'"
 					:style="item.icon"
 				/>
-				<p class="items__name">
-					{{ item.name }}
-				</p>
-				<p class="items__description">
-					{{ item.description }}
-				</p>
-				<p class="items__cost">
-					{{ item.price }}
-				</p>
+				<div>
+					<p class="items__name">
+						{{ item.name }}
+					</p>
+					<p class="items__description">
+						{{ item.description }}
+					</p>
+					<p class="items__cost">
+						{{ item.price }}
+					</p>
+				</div>
 			</div>
 		</div>
+		<a class="link product__link">show more products</a>
 	</div>
 </template>
 
@@ -48,13 +51,36 @@ export default class SearchPage extends Vue {
     		icon : 'background-image: url("/img/red_seat.png")',
     		name : 'read seat',
     		description : 'haec ego amo lectiones',
-    		price: '$45'
+    		price : '$45',
+    		big : false
     	},
     	{
-    		icon : 'background-image: url("/img/white_seat.png"); width : 300px; background-position-y: center;',
+    		icon : 'background-image: url("/img/white_seat.png");',
     		name : 'white seat',
     		description : 'haec ego amo lectiones',
-    		price: '$45'
+    		price: '$350',
+    		big : true
+    	},
+    	{
+    		icon : 'background-image: url("/img/blue_seat.png");',
+    		name : 'blue seat',
+    		description : 'haec ego amo lectiones',
+    		price: '$35',
+    		big : false
+    	},
+    	{
+    		icon : 'background-image: url("/img/bed.png");',
+    		name : 'modern bed',
+    		description : 'haec ego amo lectiones',
+    		price: '$120',
+    		big : true
+    	},
+    	{
+    		icon : 'background-image: url("/img/grey_seat.png");',
+    		name : 'grey seat',
+    		description : 'haec ego amo lectiones',
+    		price: '$50',
+    		big : false
     	},
     ]
 }
@@ -68,6 +94,14 @@ export default class SearchPage extends Vue {
     &__title {
         text-transform: uppercase;
         font-weight: 400;
+    }
+
+    &__link {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 600;
+        text-transform: uppercase;
     }
 }
 
@@ -105,6 +139,11 @@ export default class SearchPage extends Vue {
         width: 150px;
         height: 150px;
         background-size: cover;
+
+        &--big {
+            width: 238px;
+            height: 238px;
+        }
     }
 
     &__name {
@@ -115,7 +154,7 @@ export default class SearchPage extends Vue {
     }
 
     &__description {
-        margin-bottom: 0;
+        margin-top: 0;
         color: $sub-text;
     }
 
@@ -131,5 +170,10 @@ export default class SearchPage extends Vue {
     padding: 20px;
     background-color: $white;
     width:fit-content;
+
+    &--big {
+        display: flex;
+        align-items: center;
+    }
 }
 </style>

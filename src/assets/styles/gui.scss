@@ -26,6 +26,14 @@
 
 .container {
     width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px 0 ;
+}
+
+.link {
+    color: $main-color;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    font-size: 16px;
 }

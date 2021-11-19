@@ -25,7 +25,7 @@
 					/>
 				</div>
 			</div>
-			<a class="right-menu__link">
+			<a class="link right-menu__link">
 				show all categories
 			</a>
 		</div>
@@ -128,10 +128,6 @@ export default class RightMenu extends Vue {
     &__link {
         width: 200px;
         text-transform: uppercase;
-        color: $main-color;
-        text-decoration: underline;
-        text-underline-offset: 5px;
-        font-size: 16px;
         position: absolute;
         transition: bottom .5s;
         bottom: 65px;

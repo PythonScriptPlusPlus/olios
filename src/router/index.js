@@ -7,6 +7,7 @@ import ShopCart from '../views/ShoppingCart.vue';
 import Page404 from '../views/Page404.vue';
 import GUI from '../views/GuiPage.vue';
 import Product from '../views/Products.vue';
+import ProductCard from '../views/ProductCard.vue';
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
 		path: '/products',
 		name: 'Products',
 		component: Product,
+	},
+	{
+		path: '/productCard',
+		name: 'ProductsCard',
+		component: ProductCard,
 	}
 ];
 

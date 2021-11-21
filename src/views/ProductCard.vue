@@ -12,14 +12,16 @@
 			<div class="category__img" />
 		</div>
 		<div class="item">
-			<div class="counter">
+			<div
+				class="counter"
+				@click="markProduct"
+			>
 				<p class="counter__likes">
 					{{ like }}
 				</p>
 				<div
 					class="counter__mark"
 					:style="marked ? 'background-image: url(/img/icons/heart-filled.png);' : ''"
-					@click="markProduct"
 				/>
 			</div>
 			<div class="item__img" />
@@ -75,11 +77,13 @@
 					<p class="info__price">
 						quantity
 					</p>
-					<p class="info__amount">
-						1
-					</p>
+					<input
+						v-model="amount"
+						type="number"
+						class="info__amount"
+					/>
 				</div>
-				<button class="btn">
+				<button class="btn info__adding">
 					add to cart
 				</button>
 			</div>
@@ -93,7 +97,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class ProductCard extends Vue {
-    @Prop({type: String, default: 'unknown'}) title
+    @Prop({type: String, default: 'living room'}) title
 
     like = 495
     marked = false
@@ -104,7 +108,7 @@ export default class ProductCard extends Vue {
     }
 
     name = 'white seat'
-
+    amount = 1
     items = [
     	{
     		name: 'dark seat',
@@ -129,11 +133,15 @@ export default class ProductCard extends Vue {
 .bottom {
     display: flex;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .info {
     margin: auto 0 auto 30px;
     text-align: left;
+
+    &__adding {
+        margin-right: 50px;
+    }
 
     &__name {
         color: $main-color;
@@ -181,6 +189,11 @@ export default class ProductCard extends Vue {
         margin: 0;
         font-weight: 600;
         font-size: 20px;
+        border: none;
+        width: 70px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: $light-grey;
     }
 }
 
@@ -231,7 +244,7 @@ export default class ProductCard extends Vue {
 
 .properties {
     position: absolute;
-    bottom: 150px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -247,6 +260,7 @@ export default class ProductCard extends Vue {
         background-size: cover;
         width: 30px;
         height: 30px;
+        margin-right: 10px;
     }
 
     &__minus {
@@ -261,6 +275,7 @@ export default class ProductCard extends Vue {
         background-size: cover;
         width: 30px;
         height: 30px;
+        margin-right: 10px;
     }
 
     &__search {
@@ -293,7 +308,7 @@ export default class ProductCard extends Vue {
         background-color: red;
         background-image: url("/img/white_chair.png");
         background-size: cover;
-        margin: 300px auto 0;
+        margin: calc(50vw - 50vw*0.35) auto ;
     }
 }
 
@@ -303,6 +318,7 @@ export default class ProductCard extends Vue {
     right: 50px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &__likes {
         margin: 0;

@@ -40,21 +40,23 @@
 			<p class="header">
 				recomended
 			</p>
-			<div
-				v-for="item in items"
-				:key="item.name"
-				class="items"
-			>
+			<div class="recomended__wrapper">
 				<div
-					class="items__img"
-					:style="item.img"
-				/>
-				<p class="items__name">
-					{{ item.name }}
-				</p>
-				<p class="items__description">
-					{{ item.description }}
-				</p>
+					v-for="item in items"
+					:key="item.name"
+					class="items"
+				>
+					<div
+						class="items__img"
+						:style="item.img"
+					/>
+					<p class="items__name">
+						{{ item.name }}
+					</p>
+					<p class="items__description">
+						{{ item.description }}
+					</p>
+				</div>
 			</div>
 		</div>
 		<div class="info">
@@ -83,7 +85,10 @@
 						class="info__amount"
 					/>
 				</div>
-				<button class="btn info__adding">
+				<button
+					class="btn info__adding"
+					@click="addToCart"
+				>
 					add to cart
 				</button>
 			</div>
@@ -126,6 +131,9 @@ export default class ProductCard extends Vue {
     		img: 'background-image: url(/img/red_seat.png)'
     	},
     ]
+    addToCart() {
+    	this.$emit('add-to-cart');
+    }
 }
 </script>
 
@@ -201,7 +209,7 @@ export default class ProductCard extends Vue {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 10px;
+    margin-right: 40px;
 
     &__img {
         width: 125px;
@@ -240,6 +248,10 @@ export default class ProductCard extends Vue {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    &__wrapper {
+        display: flex;
+    }
 }
 
 .properties {

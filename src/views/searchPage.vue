@@ -4,24 +4,22 @@
 			v-model="term"
 			class="search__input"
 			:label="'Type whatever you want'"
-			:placeholder="'red seat'"
+			:placeholder="'read seat'"
 			clearable
 		/>
 		<div class="search__items">
-			<div class="search__item">
+			<div
+				v-for="item in items"
+				:key="item.name"
+				class="search__item"
+				@click="changeRoute('/productCard')"
+			>
 				<div
 					class="search__item-picture"
+					:style="item.img"
 				/>
 				<p class="search__item-text">
-					read seat
-				</p>
-			</div>
-			<div class="search__item">
-				<div
-					class="search__item-picture"
-				/>
-				<p class="search__item-text">
-					grey seat
+					{{ item.name }}
 				</p>
 			</div>
 		</div>
@@ -38,6 +36,21 @@ import { Component, Vue } from 'vue-property-decorator';
 
 export default class SearchPage extends Vue {
 	term = ''
+	items = [
+		{
+			name: 'read seat',
+			img: 'background-image: url(/img/red_seat.png);'
+		},
+		{
+			name: 'grey seat',
+			img: 'background-image: url(/img/grey_seat.png);'
+		},
+	]
+
+	changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+    	this.$emit('changeRoute',route);
+	}
 }
 </script>
 
@@ -57,6 +70,7 @@ export default class SearchPage extends Vue {
 		margin-top: 30px;
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 	}
 
 	&__item {
@@ -64,13 +78,23 @@ export default class SearchPage extends Vue {
 		align-items: center;
 		background: $white;
 		margin: 0 25px 25px 0;
+		transition: padding .5s;
+		height: fit-content;
+		cursor: pointer;
 
+		/*
 		&:nth-child(2) .search__item-picture{
 			background-image: url(../../public/img/grey_seat.png);
 			background-size: cover;
 			width: 100px;
 			height: 100px;
 
+		}
+		*/
+	
+		&:hover {
+			transition: padding .5s;
+			padding: 1%;
 		}
 
 		&-picture {

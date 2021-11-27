@@ -116,6 +116,14 @@ export default class RightMenu extends Vue {
         align-items: center;
         text-transform: uppercase;
         margin-bottom: 25px;
+        transition: opacity 0.2s;
+        opacity: 1;
+        cursor: pointer;
+        
+        &:hover {
+            transition: opacity 0.2s;
+            opacity: 0.7;
+        }
     }
 
     &__icon {

@@ -4,13 +4,27 @@
 			Shopping Cart
 		</h1>
 		<div class="cart__wrapper">
-			<div class="shop-card">
+			<div
+				v-if="items.length"
+				class="shop-card"
+			>
 				<cart-item
 					v-for="item in items"
 					:key="item.name"
 					:product="item"
 					@add-to-cart="addToCart"
 				/>
+			</div>
+			<div
+				v-else
+				class="shop-card"
+			>
+				<p>
+					Your cart is empty. <span
+						class="link cart__link"
+						@click="changeRoute('/products')"
+					>Go shopping</span>
+				</p>
 			</div>
 			<div class="info">
 				<p>amount of items: {{ amount }}</p>
@@ -31,7 +45,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 
@@ -42,6 +56,11 @@ export default class ProductCard extends Vue {
 
 	addToCart() {
 		console.log('log in shpcart');
+	}
+
+	changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+    	this.$emit('changeRoute',route);
 	}
 };
 </script>
@@ -58,6 +77,16 @@ export default class ProductCard extends Vue {
 	&__wrapper {
 		display: flex;
 		position: relative;
+	}
+
+	&__link {
+		font-size: 20px;
+		transition: opacity 0.2s;
+
+		&:hover {
+			transition: opacity 0.2s;
+			opacity: 0.7;
+		}
 	}
 }
 

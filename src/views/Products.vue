@@ -17,6 +17,7 @@
 					v-for="item in items"
 					:key="item.name"
 					class="items__item"
+					@click="changeRoute('/productCard')"
 				>
 					<div
 						class="items__img"
@@ -46,7 +47,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 
 export default class SearchPage extends Vue {
-    @Prop({type: String, default: 'unknown'}) title
+    @Prop({type: String, default: 'living room'}) title
 
     items = [
     	{
@@ -80,6 +81,11 @@ export default class SearchPage extends Vue {
     		price: '$50'
     	}
     ]
+
+    changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+    	this.$emit('changeRoute',route);
+    }
 }
 </script>
 
@@ -149,12 +155,14 @@ export default class SearchPage extends Vue {
 
 		&::-webkit-scrollbar {
 			display: none;
-    }
+    	}
 	}
 
 	&__item {
 		padding: 20px;
 		background: $white;
+		transition: padding 0.5s;
+		cursor: pointer;
 
 		&:nth-of-type(5n-1) {
 			grid-column: span 2;
@@ -194,6 +202,11 @@ export default class SearchPage extends Vue {
 			& .items__img {
 				margin: 0;	
 			}
+		}
+
+		&:hover {
+			transition: padding 0.5s;
+			padding: 10px;
 		}
 	}
 

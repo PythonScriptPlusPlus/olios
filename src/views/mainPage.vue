@@ -7,7 +7,10 @@
 			<h6 class="header__subtitle">
 				newest furniture shop template
 			</h6>
-			<button class="btn header__button">
+			<button
+				class="btn header__button"
+				@click="changeRoute('/products')"
+			>
 				view more
 			</button>
 		</div>
@@ -15,9 +18,17 @@
 </template>
 
 <script>
-export default {
-	name: 'MainPage',
-};
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({})
+
+export default class MainPage extends Vue {
+
+	changeRoute(route) {
+    	this.$router.push(route).catch(error => {});
+    	this.$emit('changeRoute',route);
+	}
+}
 </script>
 <style lang="scss" scoped>
 .header {

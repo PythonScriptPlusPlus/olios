@@ -3,25 +3,27 @@
 		<div class="wrapper">
 			<div class="wrapper__icon" />
 			<p class="wrapper__name">
-				red seat
+				{{ product.name }}
 			</p>
 		</div>
 		<p class="item__counter">
-			1
+			{{ product.amount }}
 		</p>
 		<p class="item__cost">
-			$45
+			{{ product.cost }}
 		</p>
 		<div class="item__cross" />
 	</div>
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({})
 
-export default class CartItem extends Vue {}
+export default class CartItem extends Vue {
+    @Prop({ type: Object, default: () => ({}) }) product
+}
 </script>
 
 <style lang="scss" scoped>

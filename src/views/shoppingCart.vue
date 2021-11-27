@@ -5,7 +5,12 @@
 		</h1>
 		<div class="cart__wrapper">
 			<div class="shop-card">
-				<cart-item />
+				<cart-item
+					v-for="item in items"
+					:key="item.name"
+					:product="item"
+					@add-to-cart="addToCart"
+				/>
 			</div>
 			<div class="info">
 				<p>amount of items: {{ amount }}</p>
@@ -26,13 +31,17 @@
 </template>
 
 <script>
-export default {
-	name : 'ShoppingCart',
-	data: function() {
-		return {
-			amount : 3,
-			price : 110,
-		};
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component({})
+
+export default class ProductCard extends Vue {
+	amount = 0
+	price = 0
+	items = []
+
+	addToCart() {
+		console.log('log in shpcart');
 	}
 };
 </script>

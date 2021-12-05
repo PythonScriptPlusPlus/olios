@@ -49,7 +49,6 @@ export default class SearchPage extends Vue {
 
 	changeRoute(route) {
     	this.$router.push(route).catch(error => {});
-    	this.$emit('changeRoute',route);
 	}
 }
 </script>
@@ -81,16 +80,6 @@ export default class SearchPage extends Vue {
 		transition: padding .5s;
 		height: fit-content;
 		cursor: pointer;
-
-		/*
-		&:nth-child(2) .search__item-picture{
-			background-image: url(../../public/img/grey_seat.png);
-			background-size: cover;
-			width: 100px;
-			height: 100px;
-
-		}
-		*/
 	
 		&:hover {
 			transition: padding .5s;

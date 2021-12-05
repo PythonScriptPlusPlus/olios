@@ -84,7 +84,6 @@ export default class SearchPage extends Vue {
 
     changeRoute(route) {
     	this.$router.push(route).catch(error => {});
-    	this.$emit('changeRoute',route);
     }
 }
 </script>

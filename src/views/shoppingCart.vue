@@ -60,7 +60,6 @@ export default class ProductCard extends Vue {
 
 	changeRoute(route) {
     	this.$router.push(route).catch(error => {});
-    	this.$emit('changeRoute',route);
 	}
 };
 </script>

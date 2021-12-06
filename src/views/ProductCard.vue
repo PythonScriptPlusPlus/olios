@@ -149,9 +149,10 @@ export default class ProductCard extends Vue {
 
 <style lang="scss" scoped>
 .bottom {
-    display: flex;
+    display: grid;
+    grid-template-columns: 250px 70px 250px;
+    grid-gap: 50px;
     align-items: flex-end;
-    justify-content: space-between;
 }
 .info {
     margin-top: 50px;
@@ -237,6 +238,7 @@ export default class ProductCard extends Vue {
     cursor: pointer;
     transition: opacity 0.4s;
     opacity: 100%;
+    padding:0 10px;
 
     &:hover {
         transition: opacity 0.4s;
@@ -247,6 +249,7 @@ export default class ProductCard extends Vue {
         width: 125px;
         height: 125px;
         background-size: cover;
+        margin-bottom: 15px;
     }
 
     &__name {
@@ -281,13 +284,14 @@ export default class ProductCard extends Vue {
         position: absolute;
         left: -70px;
         top: 50%;
+        padding: 0 15px;
     }
 
     &__wrapper {
         grid-column: 2 / 3;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-left: 20px;
     }
 }

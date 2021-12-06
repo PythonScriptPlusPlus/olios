@@ -79,6 +79,7 @@ export default class OlInput extends Vue {
     border: none;
     border-bottom: 1px solid $border-color;
     width: 100%;
+    outline: none;
 
     &::placeholder {
         color: $black;
@@ -91,6 +92,12 @@ export default class OlInput extends Vue {
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 20px;
+    cursor: pointer;
+
+    :hover {
+        color: red;
+    }
 }
 
 .field__label {

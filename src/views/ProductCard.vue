@@ -1,16 +1,5 @@
 <template>
 	<div class="card">
-		<h1 class="title">
-			products
-		</h1>
-		<div class="category">
-			<p
-				class="category__name"
-			>
-				{{ title }}
-			</p>
-			<div class="category__img" />
-		</div>
 		<div class="item">
 			<div
 				class="counter"
@@ -24,7 +13,13 @@
 					:style="marked ? 'background-image: url(/img/icons/heart-filled.png);' : ''"
 				/>
 			</div>
-			<div class="item__img" />
+			<div class="item__wrapper">
+				<img
+					src="/img/white_chair.png"
+					alt="item image"
+					class="item__img"
+				/>
+			</div>
 			<div class="properties">
 				<div class="properties__wrapper">
 					<div class="properties__plus" />
@@ -60,37 +55,52 @@
 			</div>
 		</div>
 		<div class="info">
-			<p class="info__name">
-				{{ name }} <span class="info__section"> - office</span>
-			</p>
-			<p class="info__description">
-				Sint officia sunt ex velit duis excepteur ea id tempor in.Culpa consectetur qui laboris sint eiusmod nisi dolore.
-			</p>
-			<div class="bottom">
-				<div class="info__wrapper">
-					<p class="info__price">
-						cost
+			<div class="info__header">
+				<h1 class="title">
+					products
+				</h1>
+				<div class="category">
+					<p
+						class="category__name"
+					>
+						{{ title }}
 					</p>
-					<p class="info__sale">
-						$65 <span class="info__original-cost">$90</span>
-					</p>
+					<div class="category__img" />
 				</div>
-				<div class="info__wrapper">
-					<p class="info__price">
-						quantity
-					</p>
-					<input
-						v-model="amount"
-						type="number"
-						class="info__amount"
-					/>
+			</div>
+			<div class="info__main">
+				<p class="info__name">
+					{{ name }} <span class="info__section"> - office</span>
+				</p>
+				<p class="info__description">
+					Sint officia sunt ex velit duis excepteur ea id tempor in.Culpa consectetur qui laboris sint eiusmod nisi dolore.
+				</p>
+				<div class="bottom">
+					<div class="info__wrapper">
+						<p class="info__price">
+							cost
+						</p>
+						<p class="info__sale">
+							$65 <span class="info__original-cost">$90</span>
+						</p>
+					</div>
+					<div class="info__wrapper">
+						<p class="info__price">
+							quantity
+						</p>
+						<input
+							v-model="amount"
+							type="number"
+							class="info__amount"
+						/>
+					</div>
+					<button
+						class="btn info__adding"
+						@click="addToCart"
+					>
+						add to cart
+					</button>
 				</div>
-				<button
-					class="btn info__adding"
-					@click="addToCart"
-				>
-					add to cart
-				</button>
 			</div>
 		</div>
 	</div>
@@ -144,8 +154,22 @@ export default class ProductCard extends Vue {
     justify-content: space-between;
 }
 .info {
-    margin: auto 0 auto 30px;
+    margin-top: 50px;
+    padding-left: 50px;
     text-align: left;
+    display: grid;
+    grid-template-rows: 50px auto;
+
+    &__main {
+        align-self: center;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 130px;
+    }
 
     &__adding {
         margin-right: 50px;
@@ -241,7 +265,6 @@ export default class ProductCard extends Vue {
 .recomended {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    width: 50vw;
     height: 100%;
     background-color: $white;
     box-shadow: 0 0 15px $border-color;
@@ -299,9 +322,6 @@ export default class ProductCard extends Vue {
 }
 
 .title {
-    position: absolute;
-    top: 50px;
-    left: 52.5%;
     font-weight: 200;
     text-transform: uppercase;
     font-size: 36px;
@@ -313,15 +333,9 @@ export default class ProductCard extends Vue {
     background-color: $white;
     box-shadow: 0 0 15px $border-color;
     position: relative;
-
-    &__img {
-        width: 70%;
-        height: calc(50vw*0.7);
-        background-color: red;
-        background-image: url("/img/white_chair.png");
-        background-size: cover;
-        margin: calc(50vw - 50vw*0.35) auto ;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .counter {
@@ -356,16 +370,12 @@ export default class ProductCard extends Vue {
 }
 
 .category {
-    position: absolute;
-    top: 50px;
-    right: 110px;
     display: flex;
     align-items: center;
 
     &__img {
         height: 40px;
         width: 40px;
-        //background-color: $sub-text;
         background-image: url("/img/icons/right_menu/livRoom.png");
         background-size: cover;
     }
@@ -375,6 +385,7 @@ export default class ProductCard extends Vue {
         color: $sub-text;
         margin-right: 10px;
         font-size: 18px;
+        text-transform: uppercase;
     }
 }
 </style>

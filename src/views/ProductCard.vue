@@ -32,7 +32,7 @@
 			</div>
 		</div>
 		<div class="recomended">
-			<p class="header">
+			<p class="recomended__header">
 				recomended
 			</p>
 			<div class="recomended__wrapper">
@@ -234,6 +234,14 @@ export default class ProductCard extends Vue {
     flex-direction: column;
     align-items: flex-start;
     margin-right: 40px;
+    cursor: pointer;
+    transition: opacity 0.4s;
+    opacity: 100%;
+
+    &:hover {
+        transition: opacity 0.4s;
+        opacity: 70%;
+    }
 
     &__img {
         width: 125px;
@@ -254,26 +262,33 @@ export default class ProductCard extends Vue {
     }
 }
 
-.header {
-    transform: rotate(-90deg);
-    height: fit-content;
-    text-transform: uppercase;
-    font-size: 24px;
-    margin: 0;
-}
-
 .recomended {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     height: 100%;
     background-color: $white;
     box-shadow: 0 0 15px $border-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    position: relative;
+
+    &__header {
+        transform: rotate(-90deg) translateY(50%) translateX(6.125%);
+        height: fit-content;
+        text-transform: uppercase;
+        font-size: 24px;
+        margin: 0;
+        position: absolute;
+        left: -70px;
+        top: 50%;
+    }
 
     &__wrapper {
+        grid-column: 2 / 3;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 20px;
     }
 }
 

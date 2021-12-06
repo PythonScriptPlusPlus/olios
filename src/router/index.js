@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Items from '../views/ItemsPage.vue';
 import MainPage from '../views/MainPage.vue';
 import SearchPage from '../views/SearchPage.vue';
 import ShopCart from '../views/ShoppingCart.vue';
@@ -21,11 +20,6 @@ const routes = [
 		path: '/shopcart',
 		name: 'Shopping cart',
 		component: ShopCart,
-	},
-	{
-		path: '/items',
-		name: 'Items',
-		component: Items,
 	},
 	{
 		path: '/search',

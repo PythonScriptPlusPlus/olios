@@ -11,9 +11,7 @@
 			v-if="clearable"
 			class="field__cross"
 			@click="onClear"
-		>
-			X
-		</span>
+		/>
 		<div
 			v-if="label"
 			class="field__label"
@@ -82,7 +80,7 @@ export default class OlInput extends Vue {
     outline: none;
 
     &::placeholder {
-        color: $black;
+        color: $sub-text;
     }
 }
 
@@ -92,11 +90,14 @@ export default class OlInput extends Vue {
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 20px;
+    background-image: url("/img/icons/deletion-cross.png");
+    background-size: cover;
+    transition: opacity .2s;
     cursor: pointer;
 
-    :hover {
-        color: red;
+    &:hover {
+        transition: opacity .2s;
+        opacity: 0.7;
     }
 }
 

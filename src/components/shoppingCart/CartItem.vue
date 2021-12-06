@@ -1,11 +1,14 @@
 <template>
 	<div class="item">
 		<div class="wrapper">
-			<div class="wrapper__icon" />
+			<div
+				class="wrapper__icon"
+				:style="product.image"
+			/>
 			<p class="wrapper__name">
 				{{ product.name }}
 			</p>
-		</div>
+		</div> 
 		<p class="item__counter">
 			{{ product.amount }}
 		</p>

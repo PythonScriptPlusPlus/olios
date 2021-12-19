@@ -132,7 +132,7 @@ export default class ProductCard extends Vue {
     	},
     	{
     		name: 'blue seat',
-    		description: 'Lorem ipsum dolor sit amet',
+    		description: 'Lorem ipsum dolorES sit amet',
     		img: 'background-image: url(/img/blue_seat.png)'
     	},
     	{
